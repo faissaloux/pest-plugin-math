@@ -20,6 +20,11 @@
             "src/Autoload.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "faissaloux",
@@ -41,5 +46,11 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true
         }
+    },
+    "scripts": {
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:unit"
+        ]
     }
 }
