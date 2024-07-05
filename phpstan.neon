@@ -1,0 +1,8 @@
+parameters:
+    level: max
+    paths:
+        - src
+
+    ignoreErrors:
+        - "#Undefined variable: \\$this#"
+        - "#Anonymous function should return Pest\\\\Expectation but returns Pest\\\\Mixins\\\\Expectation#"
