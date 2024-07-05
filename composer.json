@@ -33,11 +33,12 @@
     ],
     "require": {
         "php": "^8.1",
-        "pestphp/pest-plugin": "^2.1.1",
-        "phpstan/phpstan": "^1.11.6"
+        "pestphp/pest-plugin": "^2.1.1"
     },
     "require-dev": {
-        "pestphp/pest": "^2.33.0"
+        "pestphp/pest": "^2.33.0",
+        "phpstan/phpstan": "^1.11.6",
+        "rector/rector": "^1.2.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -49,9 +50,13 @@
         }
     },
     "scripts": {
+        "refactor": "rector",
+        "test:refactor": "rector --dry-run",
         "test:types": "phpstan analyse --ansi",
         "test:unit": "pest --colors=always",
         "test": [
+            "@test:refactor",
+            "@test:types",
             "@test:unit"
         ]
     }
