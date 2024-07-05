@@ -1,0 +1,45 @@
+{
+    "name": "faissaloux/pest-plugin-math",
+    "description": "Math plugin for Pest PHP",
+    "keywords": [
+        "php",
+        "framework",
+        "pest",
+        "unit",
+        "test",
+        "testing",
+        "plugin",
+        "math"
+    ],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Faissaloux\\PestMath\\": "src/"
+        },
+        "files": [
+            "src/Autoload.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "faissaloux",
+            "email": "fwahabali@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "pestphp/pest-plugin": "^2.1.1"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.33.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
