@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Faissaloux\PestMath;
 
-use Pest\Mixins\Expectation;
-
-expect()->extend('toBeDivisibleBy', function (int $divisor): Expectation {
+expect()->extend('toBeDivisibleBy', function (int $divisor) {
     return expect($this->value % $divisor === 0)->toBeTrue();
 });
