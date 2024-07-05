@@ -37,8 +37,9 @@
     },
     "require-dev": {
         "pestphp/pest": "^2.33.0",
-        "phpstan/phpstan": "^1.11.6",
-        "rector/rector": "^1.2.0"
+        "phpstan/phpstan": "^1.11.0",
+        "rector/rector": "^1.2.0",
+        "laravel/pint": "^1.16.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
@@ -51,11 +52,14 @@
     },
     "scripts": {
         "refactor": "rector",
+        "lint": "pint",
         "test:refactor": "rector --dry-run",
+        "test:lint": "pint --test",
         "test:types": "phpstan analyse --ansi",
         "test:unit": "pest --colors=always",
         "test": [
             "@test:refactor",
+            "@test:lint",
             "@test:types",
             "@test:unit"
         ]

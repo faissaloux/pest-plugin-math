@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\ExpectationFailedException;
 
-it('passes', function(int $dividend, int $divisor): void {
+it('passes', function (int $dividend, int $divisor): void {
     expect($dividend)->toBeDivisibleBy($divisor);
 })->with([
     'even' => [8, 4],

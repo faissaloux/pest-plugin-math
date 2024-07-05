@@ -30,3 +30,6 @@ jobs:
 
     - name: Types
       run: composer test:types
+
+    - name: Style
+      run: composer test:lint
