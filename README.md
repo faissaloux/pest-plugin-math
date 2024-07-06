@@ -25,3 +25,9 @@ This plugin afford math related expectations.
     expect(7)->toBeOdd();
     expect(6)->not->toBeOdd();
 ```
+
+#### `toBePrime()`
+```php
+    expect(3)->toBePrime();
+    expect(6)->not->toBePrime();
+```
