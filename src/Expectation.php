@@ -6,25 +6,42 @@ namespace Faissaloux\PestMath;
 
 use Pest\Expectation as PestExpectation;
 
-class Expectation
+/**
+ * @internal
+ * 
+ * @template TValue
+ */
+final class Expectation
 {
     public function __construct(private int $value) {}
 
+    /**
+     * @return PestExpectation<TValue>
+     */
     public function toBeDivisibleBy(int $divisor): PestExpectation
     {
         return expect($this->value % $divisor === 0)->toBeTrue();
     }
 
+    /**
+     * @return PestExpectation<TValue>
+     */
     public function toBeEven(): PestExpectation
     {
         return expect($this->value % 2 === 0)->toBeTrue();
     }
 
+    /**
+     * @return PestExpectation<TValue>
+     */
     public function toBeOdd(): PestExpectation
     {
         return expect($this->value % 2 !== 0)->toBeTrue();
     }
 
+    /**
+     * @return PestExpectation<TValue>
+     */
     public function toBePrime(): PestExpectation
     {
         if ($this->value === 1) {
@@ -40,6 +57,9 @@ class Expectation
         return expect(true)->toBeTrue();
     }
 
+    /**
+     * @return PestExpectation<TValue>
+     */
     public function toBePowerOf(int $number): PestExpectation
     {
         $power = 1;
