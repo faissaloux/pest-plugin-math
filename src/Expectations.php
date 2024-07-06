@@ -20,12 +20,12 @@ expect()->extend('toBeOdd', function (): Expectation {
 
 expect()->extend('toBePrime', function (): Expectation {
     if ($this->value === 1) {
-        return expect(true)->toBe(false);
+        return expect(true)->toBeFalse();
     }
 
     for ($i = 2; $i < $this->value; $i++) {
         if ($this->value % $i == 0) {
-            return expect(true)->toBe(false);
+            return expect(true)->toBeFalse();
         }
     }
 
