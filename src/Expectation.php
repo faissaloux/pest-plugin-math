@@ -8,7 +8,7 @@ use Pest\Expectation as PestExpectation;
 
 /**
  * @internal
- * 
+ *
  * @template TValue
  */
 final class Expectation
