@@ -18,6 +18,19 @@ expect()->extend('toBeOdd', function (): Expectation {
     return expect($this->value % 2 !== 0)->toBeTrue();
 });
 
+expect()->extend('toBePrime', function (): Expectation {
+    if ($this->value === 1)
+        return expect(true)->toBe(false);
+
+    for ($i = 2; $i < $this->value; $i++) {
+        if ($this->value % $i == 0) {
+            return expect(true)->toBe(false);
+        }
+    }
+
+    return expect(true)->toBeTrue();
+});
+
 expect()->extend('toBePowerOf', function (int $number): Expectation {
     $power = 1;
 
