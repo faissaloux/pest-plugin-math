@@ -6,6 +6,7 @@ use Faissaloux\PestMath\Expectation;
 use Pest\Expectation as PestExpectation;
 
 $expectations = get_class_methods(Expectation::class);
+$expectations = array_filter($expectations, fn ($fun): bool => str_starts_with($fun, 'toBe'));
 
 foreach ($expectations as $expectation) {
     expect()->extend(
