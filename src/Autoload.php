@@ -11,7 +11,11 @@ foreach ($expectations as $expectation) {
     expect()->extend(
         $expectation,
         function () use ($expectation): PestExpectation {
-            return call_user_func([new Expectation($this->value), $expectation], ...func_get_args());
+            if (is_callable($callback = [new Expectation($this->value), $expectation])) {
+                call_user_func($callback, ...func_get_args());
+            }
+
+            return $this;
         }
     );
 }
