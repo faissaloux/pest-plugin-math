@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Faissaloux\PestMath\Expectation;
 use Pest\Expectation as PestExpectation;
 
