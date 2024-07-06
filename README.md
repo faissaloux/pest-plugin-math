@@ -19,3 +19,9 @@ This plugin afford math related expectations.
     expect(6)->toBeEven();
     expect(7)->not->toBeEven();
 ```
+
+#### `toBeOdd()`
+```php
+    expect(7)->toBeOdd();
+    expect(6)->not->toBeOdd();
+```
