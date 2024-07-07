@@ -42,6 +42,14 @@ final class Expectation
     /**
      * @return PestExpectation<TValue>
      */
+    public function toBePositive(): PestExpectation
+    {
+        return expect($this->value > 0)->toBeTrue();
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
     public function toBePrime(): PestExpectation
     {
         if ($this->value === 1) {
