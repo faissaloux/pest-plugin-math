@@ -13,7 +13,7 @@ use Pest\Expectation as PestExpectation;
  */
 final class Expectation
 {
-    public function __construct(private int $value) {}
+    public function __construct(private int|float $value) {}
 
     /**
      * @return PestExpectation<TValue>
@@ -89,5 +89,13 @@ final class Expectation
         }
 
         return expect($this->value === $power)->toBeTrue();
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeFloat(): PestExpectation
+    {
+        return expect(is_float($this->value))->toBeTrue();
     }
 }
