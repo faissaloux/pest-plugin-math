@@ -2,6 +2,10 @@
 
 This plugin afford math related expectations.
 
+
+[![Tests](https://github.com/faissaloux/pest-plugin-math/actions/workflows/tests.yml/badge.svg)](https://github.com/faissaloux/pest-plugin-math/actions/workflows/tests.yml) ![Packagist Version](https://img.shields.io/packagist/v/faissaloux/pest-plugin-math) ![Packagist License](https://img.shields.io/packagist/l/faissaloux/pest-plugin-math)
+
+
 #### `toBeDivisibleBy()`
 ```php
     expect(8)->toBeDivisibleBy(4);
