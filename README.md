@@ -37,3 +37,9 @@ This plugin afford math related expectations.
     expect(1)->toBePositive();
     expect(-2)->not->toBePositive();
 ```
+
+#### `toBeNegative()`
+```php
+    expect(-1)->toBeNegative();
+    expect(2)->not->toBeNegative();
+```
