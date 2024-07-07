@@ -47,3 +47,9 @@ This plugin afford math related expectations.
     expect(-1)->toBeNegative();
     expect(2)->not->toBeNegative();
 ```
+
+#### `toBeFloat()`
+```php
+    expect(28.28)->toBeFloat();
+    expect(10)->not->toBeFloat();
+```
