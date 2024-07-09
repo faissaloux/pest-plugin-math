@@ -47,3 +47,10 @@ This plugin afford math related expectations.
     expect(-1)->toBeNegative();
     expect(2)->not->toBeNegative();
 ```
+
+#### `toBeSqrtOf()`
+```php
+    expect(3)->toBeSqrtOf(9);
+    expect(3.16)->toBeSqrtOf(10, 2);
+    expect(2)->not->toBeSqrtOf(9);
+```

@@ -13,7 +13,7 @@ use Pest\Expectation as PestExpectation;
  */
 final class Expectation
 {
-    public function __construct(private int $value) {}
+    public function __construct(private int|float $value) {}
 
     /**
      * @return PestExpectation<TValue>
@@ -89,5 +89,21 @@ final class Expectation
         }
 
         return expect($this->value === $power)->toBeTrue();
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeSqrtOf(int|float $number, ?int $precision = null): PestExpectation
+    {
+        expect($number >= 0)->toBeTrue();
+
+        $sqrt = sqrt($number);
+
+        if ($precision !== null) {
+            $sqrt = number_format($sqrt, $precision);
+        }
+
+        return expect((string) $this->value === (string) $sqrt)->toBeTrue();
     }
 }
