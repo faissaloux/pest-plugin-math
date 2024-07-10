@@ -54,3 +54,9 @@ This plugin afford math related expectations.
     expect(3.16)->toBeSqrtOf(10, 2);
     expect(2)->not->toBeSqrtOf(9);
 ```
+
+#### `toBeFactorialOf()`
+```php
+    expect(6)->toBeFactorialOf(3);
+    expect(4)->not->toBeFactorialOf(2);
+```
