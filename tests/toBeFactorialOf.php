@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\ExpectationFailedException;
 
-it('passes', function (int $first, int $second): void {
+it('passes', function (int $first, int|float $second): void {
     expect($first)->toBeFactorialOf($second);
 })->with([
     [1, 0],

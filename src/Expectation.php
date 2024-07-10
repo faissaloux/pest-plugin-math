@@ -112,6 +112,7 @@ final class Expectation
      */
     public function toBeFactorialOf(int $number): PestExpectation
     {
+        expect($this->value)->tobeInt();
         expect($number >= 0)->toBeTrue();
 
         if ($number === 0 || $number === 1) {
