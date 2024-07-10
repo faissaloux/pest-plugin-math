@@ -106,4 +106,13 @@ final class Expectation
 
         return expect((string) $this->value === (string) $sqrt)->toBeTrue();
     }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeBetween(int $from, int $to)
+    {
+        return expect($this->value)->toBeGreaterThanOrEqualTo($from)
+            ->and($this->value)->toBeLessThanOrEqualTo($to);
+    }
 }
