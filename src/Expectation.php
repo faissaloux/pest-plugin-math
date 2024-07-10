@@ -106,4 +106,24 @@ final class Expectation
 
         return expect((string) $this->value === (string) $sqrt)->toBeTrue();
     }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeFactorialOf(int $number): PestExpectation
+    {
+        expect($number >= 0)->toBeTrue();
+
+        if ($number === 0 || $number === 1) {
+            return expect($this->value === 1)->toBeTrue();
+        }
+
+        $factorial = 1;
+
+        for ($i = $number; $i > 1; $i--) {
+            $factorial *= $i;
+        }
+
+        return expect($this->value === $factorial)->toBeTrue();
+    }
 }
