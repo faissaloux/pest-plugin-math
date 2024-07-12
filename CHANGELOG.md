@@ -1,4 +1,9 @@
-## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.0.0...main)
+## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.1.0...main)
+
+## [v1.1.0](https://github.com/faissaloux/termspark/compare/v1.0.0...v1.1.0) - 2024-07-12
+### Added
+* `toBeFactorialOf()` [@faissaloux](https://github.com/faissaloux) in [#17](https://github.com/faissaloux/pest-plugin-math/pull/17)
+* `toBeSqrtOf()` [@faissaloux](https://github.com/faissaloux) in [#15](https://github.com/faissaloux/pest-plugin-math/pull/15)
 
 ## v1.0.0 - 2024-07-07
 ### Added
