@@ -159,4 +159,14 @@ final class Expectation
 
         return expect($this->value === $sum)->toBeTrue("$this->value !== $sum");
     }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeLogarithmOf(float $number, float $base = M_E): PestExpectation
+    {
+        return expect($base > 0)->toBeTrue('The base must be greater than 0')
+            ->and($number > 0)->toBeTrue('The number must be greater than 0')
+            ->and((string) $this->value === (string)log($number, $base))->toBeTrue("$this->value !== log($number, $base) === ".log($number, $base));
+    }
 }

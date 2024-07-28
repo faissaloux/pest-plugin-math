@@ -74,3 +74,11 @@ $$\prod\limits_n^k x * 2$$
     expect(2)->toBeProdOf(n: 0, k: 1, static fn (int $x) => $x * 2);
     expect(3)->not->toBeProdOf(n: 0, k: 1, static fn (int $x) => $x * 2);
 ```
+
+#### `toBeLogarithmOf()`
+$$\log_{base}(number)$$
+Base default is euler's number.
+```php
+    expect(0.69897000433602)->toBeLogarithmOf(number: 5, base: 10);
+    expect(1)->not->toBeLogarithmOf(number: 1);
+```
