@@ -163,4 +163,20 @@ final class Expectation
     {
         return expect($this->value === min($stack))->toBeTrue();
     }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeSumOf(int $n, int $k, callable $step): PestExpectation
+    {
+        $sum = 0;
+
+        foreach (range($n, $k) as $i) {
+            $stepSum = $step($i);
+            expect($stepSum)->toBeNumeric();
+            $sum += $stepSum;
+        }
+
+        return expect($this->value === $sum)->toBeTrue();
+    }
 }
