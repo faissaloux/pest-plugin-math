@@ -177,6 +177,22 @@ final class Expectation
             $sum += $stepSum;
         }
 
-        return expect($this->value === $sum)->toBeTrue();
+        return expect($this->value === $sum)->toBeTrue("$this->value !== $sum");
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeProdOf(int $n, int $k, callable $step): PestExpectation
+    {
+        $sum = 1;
+
+        foreach (range($n, $k) as $i) {
+            $stepSum = $step($i);
+            expect($stepSum)->toBeNumeric();
+            $sum *= $stepSum;
+        }
+
+        return expect($this->value === $sum)->toBeTrue("$this->value !== $sum");
     }
 }
