@@ -82,3 +82,10 @@ Base default is euler's number.
     expect(0.69897000433602)->toBeLogarithmOf(number: 5, base: 10);
     expect(1)->not->toBeLogarithmOf(number: 1);
 ```
+
+#### `toBeAbsoluteOf()`
+$$\mid -3 \mid$$
+```php
+    expect(3)->toBeAbsoluteOf(-3);
+    expect(3)->not->toBeAbsoluteOf(4);
+```

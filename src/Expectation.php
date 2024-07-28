@@ -169,4 +169,12 @@ final class Expectation
             ->and($number > 0)->toBeTrue('The number must be greater than 0')
             ->and((string) $this->value === (string)log($number, $base))->toBeTrue("$this->value !== log($number, $base) === ".log($number, $base));
     }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeAbsoluteOf(int|float $number): PestExpectation
+    {
+        return expect($this->value === abs($number))->toBeTrue("$this->value !== abs($number)");
+    }
 }
