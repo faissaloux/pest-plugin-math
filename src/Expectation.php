@@ -65,7 +65,7 @@ final class Expectation
         }
 
         for ($i = 2; $i < $this->value; $i++) {
-            if ($this->value % $i == 0) {
+            if ($this->value % $i === 0) {
                 return expect(true)->toBeFalse();
             }
         }
