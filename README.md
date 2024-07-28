@@ -60,3 +60,10 @@ This plugin afford math related expectations.
     expect(6)->toBeFactorialOf(3);
     expect(4)->not->toBeFactorialOf(2);
 ```
+
+#### `toBeAbsoluteOf()`
+$$\mid -3 \mid$$
+```php
+    expect(3)->toBeAbsoluteOf(-3);
+    expect(3)->not->toBeAbsoluteOf(4);
+```
