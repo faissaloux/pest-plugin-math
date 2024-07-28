@@ -60,3 +60,10 @@ This plugin affords math related expectations.
     expect(6)->toBeFactorialOf(3);
     expect(4)->not->toBeFactorialOf(2);
 ```
+
+#### `toBeSumOf()`
+$$\sum\limits_n^k x * 2$$
+```php
+    expect(2)->toBeSumOf(n: 0, k: 1, static fn (int $x) => $x * 2);
+    expect(3)->not->toBeSumOf(n: 0, k: 1, static fn (int $x) => $x * 2);
+```
