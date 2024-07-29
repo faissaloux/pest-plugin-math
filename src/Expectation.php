@@ -65,7 +65,7 @@ final class Expectation
         }
 
         for ($i = 2; $i < $this->value; $i++) {
-            if ($this->value % $i == 0) {
+            if ($this->value % $i === 0) {
                 return expect(true)->toBeFalse();
             }
         }
@@ -112,8 +112,8 @@ final class Expectation
      */
     public function toBeFactorialOf(int $number): PestExpectation
     {
-        expect($this->value)->tobeInt();
-        expect($number >= 0)->toBeTrue();
+        expect($this->value)->tobeInt()
+            ->and($number >= 0)->toBeTrue();
 
         if ($number === 0 || $number === 1) {
             return expect($this->value === 1)->toBeTrue();
@@ -126,5 +126,21 @@ final class Expectation
         }
 
         return expect($this->value === $factorial)->toBeTrue();
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeSumOf(int $n, int $k, callable $step): PestExpectation
+    {
+        $sum = 0;
+
+        foreach (range($n, $k) as $i) {
+            $stepSum = $step($i);
+            expect($stepSum)->toBeNumeric();
+            $sum += $stepSum;
+        }
+
+        return expect($this->value === $sum)->toBeTrue();
     }
 }
