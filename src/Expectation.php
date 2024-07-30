@@ -127,4 +127,12 @@ final class Expectation
 
         return expect($this->value === $factorial)->toBeTrue();
     }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeAbsoluteOf(int|float $number): PestExpectation
+    {
+        return expect($this->value === abs($number))->toBeTrue("$this->value doesn't equal abs($number)");
+    }
 }
