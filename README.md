@@ -18,6 +18,12 @@ This plugin afford math related expectations.
     expect(128)->not->toBePowerOf(3);
 ```
 
+#### `toBeMaxOf()`
+```php
+    expect(6)->toBeMaxOf([-6, 0, 6]);
+    expect(5.5)->not->toBeMaxOf([2, 4.2, 5.5, 6]);
+```
+
 #### `toBeEven()`
 ```php
     expect(6)->toBeEven();

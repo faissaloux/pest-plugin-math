@@ -135,4 +135,13 @@ final class Expectation
     {
         return expect($this->value === abs($number))->toBeTrue("$this->value doesn't equal abs($number)");
     }
+
+    /**
+     * @param  array<int|float>  $stack
+     * @return PestExpectation<TValue>
+     */
+    public function toBeMaxOf(array $stack): PestExpectation
+    {
+        return expect($this->value === max($stack))->toBeTrue();
+    }
 }
