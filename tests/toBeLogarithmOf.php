@@ -18,9 +18,15 @@ it('passes not', function (float $number, float $base): void {
     [12, .5],
 ]);
 
-test('failures', function (): void {
-    expect(1)->toBeLogarithmOf(1);
-})->throws(ExpectationFailedException::class);
+test('failures', function (float $number, float $base): void {
+    expect(1)->toBeLogarithmOf($number, $base);
+})
+    ->with([
+        [1, M_E],
+        [-1, M_E],
+        [1, -M_E],
+    ])
+    ->throws(ExpectationFailedException::class);
 
 test('failures not', function (): void {
     expect(0)->not->toBeLogarithmOf(1);

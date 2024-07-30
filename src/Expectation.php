@@ -135,6 +135,6 @@ final class Expectation
     {
         return expect($base > 0)->toBeTrue('The base must be greater than 0')
             ->and($number > 0)->toBeTrue('The number must be greater than 0')
-            ->and((string) $this->value === (string) log($number, $base))->toBeTrue("$this->value !== log($number, $base) === ".log($number, $base));
+            ->and((string) $this->value === (string) log($number, $base))->toBeTrue("$this->value doesn't equal log($number, $base)");
     }
 }
