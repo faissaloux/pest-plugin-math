@@ -65,5 +65,5 @@ This plugin afford math related expectations.
 $$\mid -3 \mid$$
 ```php
     expect(3)->toBeAbsoluteOf(-3);
-    expect(3)->not->toBeAbsoluteOf(4);
+    expect(-3)->not->toBeAbsoluteOf(-3);
 ```

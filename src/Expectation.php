@@ -133,6 +133,6 @@ final class Expectation
      */
     public function toBeAbsoluteOf(int|float $number): PestExpectation
     {
-        return expect($this->value === abs($number))->toBeTrue("$this->value !== abs($number)");
+        return expect($this->value === abs($number))->toBeTrue("$this->value doesn't equal abs($number)");
     }
 }
