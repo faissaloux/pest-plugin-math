@@ -144,4 +144,13 @@ final class Expectation
     {
         return expect($this->value === max($stack))->toBeTrue();
     }
+
+    /**
+     * @param  array<int|float>  $stack
+     * @return PestExpectation<TValue>
+     */
+    public function toBeMinOf(array $stack): PestExpectation
+    {
+        return expect($this->value === min($stack))->toBeTrue();
+    }
 }

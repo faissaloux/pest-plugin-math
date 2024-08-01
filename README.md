@@ -24,6 +24,12 @@ This plugin afford math related expectations.
     expect(5.5)->not->toBeMaxOf([2, 4.2, 5.5, 6]);
 ```
 
+#### `toBeMinOf()`
+```php
+    expect(-6)->toBeMinOf([-6, 0, 1]);
+    expect(5.5)->not->toBeMinOf([2, 4.2, 5.5, 6]);
+```
+
 #### `toBeEven()`
 ```php
     expect(6)->toBeEven();
