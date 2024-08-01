@@ -82,9 +82,9 @@ $$\mid -3 \mid$$
 
 #### `toBeLogarithmOf()`
 $$\log_{base}(number)$$
+<br>
 Base default is euler's number.
 ```php
     expect(0.69897000433602)->toBeLogarithmOf(number: 5, base: 10);
     expect(1)->not->toBeLogarithmOf(number: 1);
 ```
-
