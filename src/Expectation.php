@@ -137,4 +137,30 @@ final class Expectation
             ->and($number > 0)->toBeTrue('The number must be greater than 0')
             ->and((string) $this->value === (string) log($number, $base))->toBeTrue("$this->value doesn't equal log($number, $base)");
     }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeAbsoluteOf(int|float $number): PestExpectation
+    {
+        return expect($this->value === abs($number))->toBeTrue("$this->value doesn't equal abs($number)");
+    }
+
+    /**
+     * @param  array<int|float>  $stack
+     * @return PestExpectation<TValue>
+     */
+    public function toBeMaxOf(array $stack): PestExpectation
+    {
+        return expect($this->value === max($stack))->toBeTrue();
+    }
+
+    /**
+     * @param  array<int|float>  $stack
+     * @return PestExpectation<TValue>
+     */
+    public function toBeMinOf(array $stack): PestExpectation
+    {
+        return expect($this->value === min($stack))->toBeTrue();
+    }
 }

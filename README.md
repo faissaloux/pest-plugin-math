@@ -18,6 +18,18 @@ This plugin afford math related expectations.
     expect(128)->not->toBePowerOf(3);
 ```
 
+#### `toBeMaxOf()`
+```php
+    expect(6)->toBeMaxOf([-6, 0, 6]);
+    expect(5.5)->not->toBeMaxOf([2, 4.2, 5.5, 6]);
+```
+
+#### `toBeMinOf()`
+```php
+    expect(-6)->toBeMinOf([-6, 0, 1]);
+    expect(5.5)->not->toBeMinOf([2, 4.2, 5.5, 6]);
+```
+
 #### `toBeEven()`
 ```php
     expect(6)->toBeEven();
@@ -61,11 +73,18 @@ This plugin afford math related expectations.
     expect(4)->not->toBeFactorialOf(2);
 ```
 
+#### `toBeAbsoluteOf()`
+$$\mid -3 \mid$$
+```php
+    expect(3)->toBeAbsoluteOf(-3);
+    expect(-3)->not->toBeAbsoluteOf(-3);
+```
+
 #### `toBeLogarithmOf()`
 $$\log_{base}(number)$$
-<br>
 Base default is euler's number.
 ```php
     expect(0.69897000433602)->toBeLogarithmOf(number: 5, base: 10);
     expect(1)->not->toBeLogarithmOf(number: 1);
 ```
+
