@@ -20,7 +20,6 @@ it('passes not', function (float $number, float $base): void {
 
 test('failures', function (float $number, float $base): void {
     expect(1)->toBeLogarithmOf($number, $base);
-})
 })->with([
     [1, M_E],
     [-1, M_E],
