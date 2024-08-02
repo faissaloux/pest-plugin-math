@@ -1,4 +1,11 @@
-## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.1.0...main)
+## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.2.0...main)
+
+## [v1.2.0](https://github.com/faissaloux/termspark/compare/v1.1.0...v1.2.0) - 2024-08-02
+### Added
+* add a logarithm expectation [@Katalam](https://github.com/Katalam) in [#22](https://github.com/faissaloux/pest-plugin-math/pull/22)
+* `toBeMinOf()` [@faissaloux](https://github.com/faissaloux) in [#25](https://github.com/faissaloux/pest-plugin-math/pull/25)
+* `toBeMaxOf()` [@faissaloux](https://github.com/faissaloux) in [#24](https://github.com/faissaloux/pest-plugin-math/pull/24)
+* add an absolute expectation [@Katalam](https://github.com/Katalam) in [#23](https://github.com/faissaloux/pest-plugin-math/pull/23)
 
 ## [v1.1.0](https://github.com/faissaloux/termspark/compare/v1.0.0...v1.1.0) - 2024-07-12
 ### Added
