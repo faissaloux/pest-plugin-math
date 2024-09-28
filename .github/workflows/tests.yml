@@ -9,9 +9,13 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
         php: ['8.1', '8.2', '8.3']
+        pest: ['2.*', '3.*']
         dependency-version: [prefer-lowest, prefer-stable]
+        exclude:
+          - php: '8.1'
+            pest: '3.*'
 
-    name: PHP ${{ matrix.php }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
+    name: PHP ${{ matrix.php }} - PEST ${{ matrix.pest }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
     steps:
     - name: Checkout
@@ -25,7 +29,9 @@ jobs:
         coverage: xdebug
 
     - name: Install PHP dependencies
-      run: composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
+      run: |
+        composer require "pestphp/pest:${{ matrix.pest }}"  --no-interaction --no-update
+        composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
     - name: Unit Tests
       run: composer test:unit -- --coverage-clover ./coverage.xml
