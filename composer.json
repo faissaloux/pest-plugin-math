@@ -33,7 +33,7 @@
     ],
     "require": {
         "php": "^8.1",
-        "pestphp/pest": "^2.0"
+        "pestphp/pest": "^2.0 || ^3.0"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.11.0",
