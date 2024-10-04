@@ -101,26 +101,3 @@ $$\sum\limits_n^k x * 2$$
     expect(2)->toBeSumOf(static fn (int $x) => $x * 2, from: 0, to: 1);
     expect(3)->not->toBeSumOf(static fn (int $x) => $x * 2, from: 0, to: 1);
 ```
-
-#### `toBeProdOf()`
-$$\prod\limits_n^k x * 2$$
-```php
-    expect(2)->toBeProdOf(n: 0, k: 1, static fn (int $x) => $x * 2);
-    expect(3)->not->toBeProdOf(n: 0, k: 1, static fn (int $x) => $x * 2);
-```
-
-#### `toBeLogarithmOf()`
-$$\log_{base}(number)$$
-<br>
-Base default is euler's number.
-```php
-    expect(0.69897000433602)->toBeLogarithmOf(number: 5, base: 10);
-    expect(1)->not->toBeLogarithmOf(number: 1);
-```
-
-#### `toBeAbsoluteOf()`
-$$\mid -3 \mid$$
-```php
-    expect(3)->toBeAbsoluteOf(-3);
-    expect(3)->not->toBeAbsoluteOf(4);
-```
