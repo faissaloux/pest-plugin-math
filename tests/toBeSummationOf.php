@@ -27,5 +27,5 @@ test('failures', function (): void {
 })->throws(ExpectationFailedException::class);
 
 test('failures not', function (): void {
-    expect(2)->not->toBeSummationOf(static fn (int $i): int => $i * 2, 0 ,1);
+    expect(2)->not->toBeSummationOf(static fn (int $i): int => $i * 2, 0, 1);
 })->throws(ExpectationFailedException::class);
