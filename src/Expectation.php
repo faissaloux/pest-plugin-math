@@ -135,7 +135,21 @@ final class Expectation
     {
         return expect($base > 0)->toBeTrue('The base must be greater than 0')
             ->and($number > 0)->toBeTrue('The number must be greater than 0')
-            ->and((string) $this->value === (string) log($number, $base))->toBeTrue("$this->value doesn't equal log($number, $base)");
+            ->and((string)$this->value === (string)log($number, $base))->toBeTrue("$this->value doesn't equal log($number, $base)");
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeSumOf(array $numbers): PestExpectation
+    {
+        $sum = 0;
+        foreach ($numbers as $number) {
+            expect($number)->toBeNumeric();
+            $sum += $number;
+        }
+
+        return expect($this->value === $sum)->toBeTrue("$this->value !== $sum");
     }
 
     /**
@@ -167,11 +181,11 @@ final class Expectation
     /**
      * @return PestExpectation<TValue>
      */
-    public function toBeSumOf(int $n, int $k, callable $step): PestExpectation
+    public function toBeSummationOf(callable $step, int $from, int $to): PestExpectation
     {
         $sum = 0;
 
-        foreach (range($n, $k) as $i) {
+        foreach (range($from, $to) as $i) {
             $stepSum = $step($i);
             expect($stepSum)->toBeNumeric();
             $sum += $stepSum;
@@ -194,23 +208,5 @@ final class Expectation
         }
 
         return expect($this->value === $sum)->toBeTrue("$this->value !== $sum");
-    }
-
-    /**
-     * @return PestExpectation<TValue>
-     */
-    public function toBeLogarithmOf(float $number, float $base = M_E): PestExpectation
-    {
-        return expect($base > 0)->toBeTrue('The base must be greater than 0')
-            ->and($number > 0)->toBeTrue('The number must be greater than 0')
-            ->and((string) $this->value === (string) log($number, $base))->toBeTrue("$this->value !== log($number, $base) === ".log($number, $base));
-    }
-
-    /**
-     * @return PestExpectation<TValue>
-     */
-    public function toBeAbsoluteOf(int|float $number): PestExpectation
-    {
-        return expect($this->value === abs($number))->toBeTrue("$this->value !== abs($number)");
     }
 }
