@@ -139,6 +139,7 @@ final class Expectation
     }
 
     /**
+     * @param  array<int|float>  $numbers
      * @return PestExpectation<TValue>
      */
     public function toBeSumOf(array $numbers): PestExpectation
