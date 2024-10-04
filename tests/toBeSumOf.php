@@ -2,30 +2,32 @@
 
 use PHPUnit\Framework\ExpectationFailedException;
 
-it('passes', function (int $sum, int $n, int $k, callable $step): void {
-    expect($sum)->toBeSumOf($n, $k, $step);
+it('passes', function (int $sum, array $numbers): void {
+    expect($sum)->toBeSumOf($numbers);
 })->with([
-    [110, 0, 10, static fn (int $i): int => $i * 2],
-    [418, 2, 20, static fn (int $i): int => $i * 2],
-    [1628, 4, 40, static fn (int $i): int => $i * 2],
-    [3630, 6, 60, static fn (int $i): int => $i * 2],
-    [6424, 8, 80, static fn (int $i): int => $i * 2],
+    [10, [3, 3, 4]],
+    [20, [4, 4, 4, 4, 4]],
+    [30, [5, 5, 5, 5, 5, 5]],
+    [40, [6, 6, 6, 6, 6, 6, 4]],
+    [50, [7, 7, 7, 7, 7, 7, 7, 1]],
+    [72, [8, 8, 8, 8, 8, 8, 8, 8, 8]],
+    [88, [9, 9, 9, 9, 9, 9, 9, 9, 9, 7]],
+    [110, [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]],
 ]);
 
-it('passes not', function (int $n, int $k, callable $step): void {
-    expect(1)->not->toBeSumOf($n, $k, $step);
+it('passes not', function (array $numbers): void {
+    expect(1)->not->toBeSumOf($numbers);
 })->with([
-    [0, 10, static fn (int $i): int => $i * 2],
-    [2, 20, static fn (int $i): int => $i * 2],
-    [4, 40, static fn (int $i): int => $i * 2],
-    [6, 60, static fn (int $i): int => $i * 2],
-    [8, 80, static fn (int $i): int => $i * 2],
+    [[2, 3]],
+    [[1, 2, 3]],
+    [[1, 2, 3, 4]],
+    [[1, 2, 3, 4, 5]],
 ]);
 
 test('failures', function (): void {
-    expect(1)->toBeSumOf(0, 1, static fn (int $i): int => $i * 2);
+    expect(1)->toBeSumOf([]);
 })->throws(ExpectationFailedException::class);
 
 test('failures not', function (): void {
-    expect(2)->not->toBeSumOf(0, 1, static fn (int $i): int => $i * 2);
+    expect(2)->not->toBeSumOf([2]);
 })->throws(ExpectationFailedException::class);

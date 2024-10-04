@@ -89,6 +89,12 @@ Base default is euler's number.
     expect(1)->not->toBeLogarithmOf(number: 1);
 ```
 
+#### `toBeSumOf()`
+```php
+    expect(6)->toBeSumOf([1, 2, 3]);
+    expect(4)->not->toBeSumOf([2, 3]);
+```
+
 #### `toBeSummationOf()`
 $$\sum\limits_n^k x * 2$$
 ```php
