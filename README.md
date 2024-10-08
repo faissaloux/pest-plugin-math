@@ -98,6 +98,6 @@ Base default is euler's number.
 #### `toBeSummationOf()`
 $$\sum\limits_n^k x * 2$$
 ```php
-    expect(2)->toBeSummationOf(static fn (int $x) => $x * 2, from: 0, to: 1);
-    expect(3)->not->toBeSummationOf(static fn (int $x) => $x * 2, from: 0, to: 1);
+    expect(2)->toBeSummationOf(fn (int $x) => $x * 2, from: 0, to: 1);
+    expect(3)->not->toBeSummationOf(fn (int $x) => $x * 2, from: 0, to: 1);
 ```

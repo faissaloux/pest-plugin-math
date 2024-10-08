@@ -194,6 +194,6 @@ final class Expectation
             $sum += $stepSum;
         }
 
-        return expect($this->value === $sum)->toBeTrue("$this->value !== $sum");
+        return expect($this->value === $sum)->toBeTrue("$this->value doesn't equal $sum");
     }
 }
