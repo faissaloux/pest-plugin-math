@@ -145,12 +145,14 @@ final class Expectation
     public function toBeSumOf(array $numbers): PestExpectation
     {
         $sum = 0;
+
         foreach ($numbers as $number) {
             expect($number)->toBeNumeric();
+
             $sum += $number;
         }
 
-        return expect($this->value === $sum)->toBeTrue("$this->value !== $sum");
+        return expect($this->value === $sum)->toBeTrue("$this->value doesn't equal $sum");
     }
 
     /**
