@@ -9,7 +9,9 @@ it('passes', function (int $sum, int $from, int $to, callable $step): void {
     [0, 0, 0, fn (int $i): int => $i * 2],
     [110, 0, 10, fn (int $i): int => $i * 2],
     [110, 10, 0, fn (int $i): int => $i * 2],
-    [418, 2, 20, function (int $i): int { return $i * 2; }],
+    [418, 2, 20, function (int $i): int {
+        return $i * 2;
+    }],
 ]);
 
 it('passes not', function (callable $step, int $from, int $to): void {
