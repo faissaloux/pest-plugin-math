@@ -1,6 +1,6 @@
 # PEST PLUGIN MATH
 
-This plugin afford math related expectations.
+This plugin affords math related expectations.
 
 
 [![Tests](https://github.com/faissaloux/pest-plugin-math/actions/workflows/tests.yml/badge.svg)](https://github.com/faissaloux/pest-plugin-math/actions/workflows/tests.yml) ![Codecov](https://img.shields.io/codecov/c/github/faissaloux/pest-plugin-math) ![Packagist Version](https://img.shields.io/packagist/v/faissaloux/pest-plugin-math) ![Packagist License](https://img.shields.io/packagist/l/faissaloux/pest-plugin-math)
@@ -87,4 +87,17 @@ Base default is euler's number.
 ```php
     expect(0.69897000433602)->toBeLogarithmOf(number: 5, base: 10);
     expect(1)->not->toBeLogarithmOf(number: 1);
+```
+
+#### `toBeSumOf()`
+```php
+    expect(6)->toBeSumOf([1, 2, 3]);
+    expect(4)->not->toBeSumOf([2, 3]);
+```
+
+#### `toBeSummationOf()`
+$$\sum\limits_n^k x * 2$$
+```php
+    expect(2)->toBeSummationOf(fn (int $x) => $x * 2, from: 0, to: 1);
+    expect(3)->not->toBeSummationOf(fn (int $x) => $x * 2, from: 0, to: 1);
 ```

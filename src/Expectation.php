@@ -65,7 +65,7 @@ final class Expectation
         }
 
         for ($i = 2; $i < $this->value; $i++) {
-            if ($this->value % $i == 0) {
+            if ($this->value % $i === 0) {
                 return expect(true)->toBeFalse();
             }
         }
@@ -112,8 +112,8 @@ final class Expectation
      */
     public function toBeFactorialOf(int $number): PestExpectation
     {
-        expect($this->value)->tobeInt();
-        expect($number >= 0)->toBeTrue();
+        expect($this->value)->tobeInt()
+            ->and($number >= 0)->toBeTrue();
 
         if ($number === 0 || $number === 1) {
             return expect($this->value === 1)->toBeTrue();
@@ -136,6 +136,23 @@ final class Expectation
         return expect($base > 0)->toBeTrue('The base must be greater than 0')
             ->and($number > 0)->toBeTrue('The number must be greater than 0')
             ->and((string) $this->value === (string) log($number, $base))->toBeTrue("$this->value doesn't equal log($number, $base)");
+    }
+
+    /**
+     * @param  array<int|float>  $numbers
+     * @return PestExpectation<TValue>
+     */
+    public function toBeSumOf(array $numbers): PestExpectation
+    {
+        $sum = 0;
+
+        foreach ($numbers as $number) {
+            expect($number)->toBeNumeric();
+
+            $sum += $number;
+        }
+
+        return expect($this->value === $sum)->toBeTrue("$this->value doesn't equal $sum");
     }
 
     /**
@@ -162,5 +179,21 @@ final class Expectation
     public function toBeMinOf(array $stack): PestExpectation
     {
         return expect($this->value === min($stack))->toBeTrue();
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeSummationOf(callable $step, int $from, int $to): PestExpectation
+    {
+        $sum = 0;
+
+        foreach (range($from, $to) as $i) {
+            $stepSum = $step($i);
+            expect($stepSum)->toBeNumeric();
+            $sum += $stepSum;
+        }
+
+        return expect($this->value === $sum)->toBeTrue("$this->value doesn't equal $sum");
     }
 }
