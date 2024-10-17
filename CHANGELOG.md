@@ -1,4 +1,8 @@
-## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.2.0...main)
+## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.3.0...main)
+
+## [v1.3.0](https://github.com/faissaloux/termspark/compare/v1.2.0...v1.3.0) - 2024-09-28
+### Added
+* Pest3 support [@faissaloux](https://github.com/faissaloux) in [#26](https://github.com/faissaloux/pest-plugin-math/pull/26)
 
 ## [v1.2.0](https://github.com/faissaloux/termspark/compare/v1.1.0...v1.2.0) - 2024-08-02
 ### Added
