@@ -34,7 +34,7 @@ jobs:
         composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
     - name: Unit Tests (not macos)
-      if: matrix.os !== 'macos-latest'
+      if: matrix.os != 'macos-latest'
       run: composer test:unit -- --coverage-clover ./coverage.xml
 
     - name: Unit Tests (macos)
