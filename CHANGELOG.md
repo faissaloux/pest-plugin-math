@@ -1,20 +1,25 @@
-## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.3.0...main)
+## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.4.0...main)
+
+## [v1.4.0](https://github.com/faissaloux/termspark/compare/v1.3.0...v1.4.0) - 2024-10-18
+### Added
+* php8.4 support by [@faissaloux](https://github.com/faissaloux) in [#28](https://github.com/faissaloux/pest-plugin-math/pull/28)
+* Add sum of expectation by [@faissaloux](https://github.com/faissaloux) in [#20](https://github.com/faissaloux/pest-plugin-math/pull/20)
 
 ## [v1.3.0](https://github.com/faissaloux/termspark/compare/v1.2.0...v1.3.0) - 2024-09-28
 ### Added
-* Pest3 support [@faissaloux](https://github.com/faissaloux) in [#26](https://github.com/faissaloux/pest-plugin-math/pull/26)
+* Pest3 support by [@faissaloux](https://github.com/faissaloux) in [#26](https://github.com/faissaloux/pest-plugin-math/pull/26)
 
 ## [v1.2.0](https://github.com/faissaloux/termspark/compare/v1.1.0...v1.2.0) - 2024-08-02
 ### Added
-* add a logarithm expectation [@Katalam](https://github.com/Katalam) in [#22](https://github.com/faissaloux/pest-plugin-math/pull/22)
-* `toBeMinOf()` [@faissaloux](https://github.com/faissaloux) in [#25](https://github.com/faissaloux/pest-plugin-math/pull/25)
-* `toBeMaxOf()` [@faissaloux](https://github.com/faissaloux) in [#24](https://github.com/faissaloux/pest-plugin-math/pull/24)
-* add an absolute expectation [@Katalam](https://github.com/Katalam) in [#23](https://github.com/faissaloux/pest-plugin-math/pull/23)
+* add a logarithm expectation by [@Katalam](https://github.com/Katalam) in [#22](https://github.com/faissaloux/pest-plugin-math/pull/22)
+* `toBeMinOf()` by [@faissaloux](https://github.com/faissaloux) in [#25](https://github.com/faissaloux/pest-plugin-math/pull/25)
+* `toBeMaxOf()` by [@faissaloux](https://github.com/faissaloux) in [#24](https://github.com/faissaloux/pest-plugin-math/pull/24)
+* add an absolute expectation by [@Katalam](https://github.com/Katalam) in [#23](https://github.com/faissaloux/pest-plugin-math/pull/23)
 
 ## [v1.1.0](https://github.com/faissaloux/termspark/compare/v1.0.0...v1.1.0) - 2024-07-12
 ### Added
-* `toBeFactorialOf()` [@faissaloux](https://github.com/faissaloux) in [#17](https://github.com/faissaloux/pest-plugin-math/pull/17)
-* `toBeSqrtOf()` [@faissaloux](https://github.com/faissaloux) in [#15](https://github.com/faissaloux/pest-plugin-math/pull/15)
+* `toBeFactorialOf()` by [@faissaloux](https://github.com/faissaloux) in [#17](https://github.com/faissaloux/pest-plugin-math/pull/17)
+* `toBeSqrtOf()` by [@faissaloux](https://github.com/faissaloux) in [#15](https://github.com/faissaloux/pest-plugin-math/pull/15)
 
 ## v1.0.0 - 2024-07-07
 ### Added
