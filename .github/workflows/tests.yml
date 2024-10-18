@@ -33,9 +33,11 @@ jobs:
         composer require "pestphp/pest:^${{ matrix.pest }}"  --no-interaction --no-update
         composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
-    - name: Unit Tests
+    - name: Unit Tests (not macos)
       if: matrix.os !== 'macos-latest'
       run: composer test:unit -- --coverage-clover ./coverage.xml
+
+    - name: Unit Tests (macos)
       if: matrix.os == 'macos-latest'
       run: composer test:unit
 
