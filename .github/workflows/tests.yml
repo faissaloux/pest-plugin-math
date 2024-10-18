@@ -33,16 +33,11 @@ jobs:
         composer require "pestphp/pest:^${{ matrix.pest }}"  --no-interaction --no-update
         composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
-    - name: Unit Tests (not macos)
-      if: matrix.os != 'macos-latest'
+    - name: Unit Tests
       run: composer test:unit -- --coverage-clover ./coverage.xml
 
-    - name: Unit Tests (macos)
-      if: matrix.os == 'macos-latest'
-      run: composer test:unit
-
     - name: Upload coverage reports to Codecov
-      if: ${{matrix.os == 'ubuntu-latest' && matrix.php == '8.1'}}
+      if: ${{matrix.os == 'ubuntu-latest' && matrix.php == '8.1' && matrix.pest == '2.0' && matrix.dependency-version == 'prefer-stable'}}
       uses: codecov/codecov-action@v4.0.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
