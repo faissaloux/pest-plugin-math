@@ -8,14 +8,14 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        php: ['8.1', '8.2', '8.3']
-        pest: ['2.*', '3.*']
+        php: ['8.1', '8.2', '8.3', '8.4']
+        pest: ['2.0', '3.0']
         dependency-version: [prefer-lowest, prefer-stable]
         exclude:
           - php: '8.1'
-            pest: '3.*'
+            pest: '3.0'
 
-    name: PHP ${{ matrix.php }} - PEST ${{ matrix.pest }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
+    name: PHP ${{ matrix.php }} - PEST ^${{ matrix.pest }} - ${{ matrix.os }} - ${{ matrix.dependency-version }}
 
     steps:
     - name: Checkout
@@ -30,13 +30,14 @@ jobs:
 
     - name: Install PHP dependencies
       run: |
-        composer require "pestphp/pest:${{ matrix.pest }}"  --no-interaction --no-update
+        composer require "pestphp/pest:^${{ matrix.pest }}"  --no-interaction --no-update
         composer update --${{ matrix.dependency-version }} --no-interaction --no-progress --ansi
 
     - name: Unit Tests
       run: composer test:unit -- --coverage-clover ./coverage.xml
 
     - name: Upload coverage reports to Codecov
+      if: ${{matrix.os == 'ubuntu-latest' && matrix.php == '8.1' && matrix.pest == '2.0' && matrix.dependency-version == 'prefer-stable'}}
       uses: codecov/codecov-action@v4.0.1
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
