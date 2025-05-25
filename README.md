@@ -5,6 +5,13 @@ This plugin affords math related expectations.
 
 [![Tests](https://github.com/faissaloux/pest-plugin-math/actions/workflows/tests.yml/badge.svg)](https://github.com/faissaloux/pest-plugin-math/actions/workflows/tests.yml) ![Codecov](https://img.shields.io/codecov/c/github/faissaloux/pest-plugin-math) ![Packagist Version](https://img.shields.io/packagist/v/faissaloux/pest-plugin-math) ![Packagist License](https://img.shields.io/packagist/l/faissaloux/pest-plugin-math)
 
+## Requirements
+
+| pest   | php     | pest-plugin-math |
+| ------ | ------- | ---------------- |
+| ^2.0   | ^8.1    | ^1.0.0           |
+| ^3.0   | ^8.2    | ^1.3.0           |
+| ^4.0   | ^8.3    | ^1.5.0           |
 
 #### `toBeDivisibleBy()`
 ```php
