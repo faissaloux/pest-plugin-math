@@ -205,7 +205,7 @@ final class Expectation
     {
         $prod = 1;
 
-        if (count($numbers) === 0) {
+        if ($numbers === []) {
             return expect($this->value === 0)->toBeTrue("$this->value doesn't equal 0");
         }
 
