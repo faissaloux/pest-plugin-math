@@ -218,6 +218,9 @@ final class Expectation
         return expect($this->value === $prod)->toBeTrue("$this->value doesn't equal $prod");
     }
 
+    /**
+     * @return PestExpectation<TValue>
+     */
     public function toBeProductOf(callable $step, int $from, int $to): PestExpectation
     {
         $product = 1;
