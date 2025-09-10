@@ -203,11 +203,11 @@ final class Expectation
      */
     public function toBeProdOf(array $numbers): PestExpectation
     {
-        $prod = 1;
-
         if ($numbers === []) {
             return expect($this->value === 0)->toBeTrue("$this->value doesn't equal 0");
         }
+
+        $prod = 1;
 
         foreach ($numbers as $number) {
             expect($number)->toBeNumeric();
@@ -226,9 +226,9 @@ final class Expectation
         $product = 1;
 
         foreach (range($from, $to) as $i) {
-            $stepSum = $step($i);
-            expect($stepSum)->toBeNumeric();
-            $product *= $stepSum;
+            $stepProd = $step($i);
+            expect($stepProd)->toBeNumeric();
+            $product *= $stepProd;
         }
 
         return expect($this->value === $product)->toBeTrue("$this->value !== $product");
