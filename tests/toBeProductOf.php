@@ -8,7 +8,7 @@ it('passes', function (int $prod, int $from, int $to, callable $step): void {
     [0, -1, 0, fn (int $i): int => $i * 2],
     [0, 0, 0, fn (int $i): int => $i * 2],
     [3715891200, 1, 10, fn (int $i): int => $i * 2],
-    [0, 10, 0, fn (int $i): int => $i * 2],
+    [3715891200, 10, 1, fn (int $i): int => $i * 2],
     [362880, 2, 10, function (int $i): int {
         return $i - 1;
     }],
