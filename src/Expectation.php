@@ -196,4 +196,41 @@ final class Expectation
 
         return expect($this->value === $sum)->toBeTrue("$this->value doesn't equal $sum");
     }
+
+    /**
+     * @param  array<int|float>  $numbers
+     * @return PestExpectation<TValue>
+     */
+    public function toBeProdOf(array $numbers): PestExpectation
+    {
+        if ($numbers === []) {
+            return expect($this->value === 0)->toBeTrue("$this->value doesn't equal 0");
+        }
+
+        $prod = 1;
+
+        foreach ($numbers as $number) {
+            expect($number)->toBeNumeric();
+
+            $prod *= $number;
+        }
+
+        return expect($this->value === $prod)->toBeTrue("$this->value doesn't equal $prod");
+    }
+
+    /**
+     * @return PestExpectation<TValue>
+     */
+    public function toBeProductOf(callable $step, int $from, int $to): PestExpectation
+    {
+        $product = 1;
+
+        foreach (range($from, $to) as $i) {
+            $stepProd = $step($i);
+            expect($stepProd)->toBeNumeric();
+            $product *= $stepProd;
+        }
+
+        return expect($this->value === $product)->toBeTrue("$this->value !== $product");
+    }
 }

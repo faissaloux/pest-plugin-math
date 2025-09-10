@@ -108,3 +108,16 @@ $$\sum\limits_n^k x * 2$$
     expect(2)->toBeSummationOf(fn (int $x) => $x * 2, from: 0, to: 1);
     expect(3)->not->toBeSummationOf(fn (int $x) => $x * 2, from: 0, to: 1);
 ```
+
+#### `toBeProdOf()`
+```php
+    expect(6)->toBeProdOf([1, 2, 3]);
+    expect(4)->not->toBeProdOf([2, 3]);
+```
+
+#### `toBeProductOf()`
+$$\prod\limits_n^k x * 2$$
+```php
+    expect(3715891200)->toBeProductOf(fn (int $x) => $x * 2, from: 1, to: 10);
+    expect(1)->not->toBeProductOf(fn (int $x) => $x * 2, from: 1, to: 10);
+```
