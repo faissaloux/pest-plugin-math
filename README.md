@@ -118,6 +118,6 @@ $$\sum\limits_n^k x * 2$$
 #### `toBeProductOf()`
 $$\prod\limits_n^k x * 2$$
 ```php
-    expect(2)->toBeProdOf(static fn (int $x) => $x * 2, from: 0, to: 1);
-    expect(3)->not->toBeProdOf(static fn (int $x) => $x * 2, from: 0, to: 1);
+    expect(3715891200)->toBeProductOf(fn (int $x) => $x * 2, from: 1, to: 10);
+    expect(1)->not->toBeProductOf(fn (int $x) => $x * 2, from: 1, to: 10);
 ```
