@@ -1,4 +1,9 @@
-## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.5.0...main)
+## [Unreleased](https://github.com/faissaloux/pest-plugin-math/compare/v1.6.0...main)
+
+## [v1.6.0](https://github.com/faissaloux/pest-plugin-math/compare/v1.5.0...v1.6.0) - 2025-11-21
+### Added
+* `php8.5` support by [@Katalam](https://github.com/Katalam) in [#30](https://github.com/faissaloux/pest-plugin-math/pull/30)
+* Add product of expectation by [@Katalam](https://github.com/Katalam) in [#21](https://github.com/faissaloux/pest-plugin-math/pull/21)
 
 ## [v1.5.0](https://github.com/faissaloux/pest-plugin-math/compare/v1.4.0...v1.5.0) - 2025-05-25
 ### Added
